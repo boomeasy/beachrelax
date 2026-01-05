@@ -22,7 +22,7 @@ const quotes = [
 ];
 
 let currentQuoteIndex = 0;
-let isMuted = true;
+let isMuted = false;
 
 const quoteText = document.getElementById('quote-text');
 const unmuteBtn = document.getElementById('unmute-btn');
@@ -47,6 +47,9 @@ showQuote(currentQuoteIndex);
 
 // Rotate quotes every 8 seconds (gives time to read)
 setInterval(nextQuote, 8000);
+
+// Initialize button as unmuted
+unmuteBtn.classList.add('unmuted');
 
 // Unmute button functionality
 unmuteBtn.addEventListener('click', () => {
